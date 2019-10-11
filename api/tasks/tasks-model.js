@@ -8,7 +8,8 @@ module.exports = {
 
 function get() {
     return db('tasks')
-    
+
+
 }
 
 function getById(id) {
@@ -20,3 +21,4 @@ function add(task) {
     return db('tasks')
     .insert(task)
 }
+

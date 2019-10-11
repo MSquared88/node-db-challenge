@@ -27,6 +27,16 @@ router.get('/:id',(req,res) => {
     })
 })
 
+router.get('/:id/tasks',(req,res) => {
+    ProjectsModel.getProjectTasks(req.params.id)
+    .then(tasks => {
+        res.status(200).json(tasks)
+    })
+    .catch(err => {
+        res.status(500).json({message: 'could not get project with id', errMessage: err})
+    })
+})
+
 router.post('/', (req, res) => {
     ProjectsModel.add(req.body)
     .then(project => {
