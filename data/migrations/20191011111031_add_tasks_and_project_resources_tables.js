@@ -23,6 +23,7 @@ exports.up = function(knex) {
 		tbl
 			.boolean('completed')
 			.defaultTo(false)
+			.notNullable()
 	})
 	.createTable('project_resources', tbl => {
 		tbl

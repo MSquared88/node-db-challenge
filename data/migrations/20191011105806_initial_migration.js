@@ -15,6 +15,7 @@ exports.up = function(knex) {
 		tbl
 			.boolean('completed')
 			.defaultTo(false)
+			.notNullable()
 	})
 	.createTable('resources', tbl => {
 		tbl
